@@ -1,0 +1,9 @@
+{
+"author": {"name":"Piller","firstname":"Sébastien"},
+"document": {"date": "2017-01-19", 
+"data": [
+    {"field1":"value1_0", "field2":"value2_0"},
+    {"field1":"value1_1", "field2":"value2_1"},
+    {"field1":"value1_2", "field2":"value2_2"}
+]}
+}
