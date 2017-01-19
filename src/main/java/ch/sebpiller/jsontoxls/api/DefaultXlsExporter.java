@@ -20,6 +20,19 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
+/**
+ * A default implementation for TechFirm SA, where the conventions are defined
+ * to look like the placeholders mechanism you find sometimes in xml:
+ * 
+ * <code>${myobject.myfield}, ${myobject.myarray[4].anotherfield}, etc.</code>
+ * 
+ * It supports rows replications when iterating over a collection. The notation
+ * should be "${myobject.myarray[].myfield}" (no index means a repetition).
+ * 
+ * Actually, the repetition can be only of 1 row. If needed, a further
+ * enhancement could be to define a convention to say: hey framework, copy those
+ * x lines when you find an iteration.
+ */
 public class DefaultXlsExporter implements XlsExporter {
 	private static final Logger LOG = LoggerFactory.getLogger(DefaultXlsExporter.class);
 	private static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\$\\{(.*)\\}");
