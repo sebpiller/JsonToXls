@@ -1,0 +1,43 @@
+{
+  "initiator": "Seb Vandenbergh",
+  "workflowInstanceId": 54321,
+  "achatDeMateriel": {
+    "client": {
+      "nom": "The Big Company",
+      "rue": "Rue du Rhone, 42",
+      "codePostal" : 1201,
+      "localite": "Genève"
+    },
+    "numCommande": 123456,
+    "produits": [
+      {
+        "code": "P1",
+        "nom": "pile AAA",
+        "description": "Pile rechargeable",
+        "quantite": 10,
+        "prix": 2
+      },
+      {
+        "code": "P2",
+        "nom": "pile AA",
+        "description": "Pile rechargeable",
+        "quantite": 20,
+        "prix": 3
+      },
+      {
+        "code": "P3",
+        "nom": "Batterie LIPO",
+        "description": "Rechargeable en 45 minutes",
+        "quantite": 5,
+        "prix": 20
+      },
+      {
+        "code": "P4",
+        "nom": "Télécommande",
+        "description": "27 Mhz",
+        "quantite": 1,
+        "prix": 200
+      }
+    ]
+  }
+}
