@@ -8,13 +8,15 @@ import java.io.InputStream;
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
 
-public class BaseXlsExporterTest {
-	protected DefaultXlsExporter exporter;
+public abstract class BaseXlsExporterTest {
+	protected XlsExporter exporter;
 
 	@Before
 	public void setUp() {
-		exporter = new DefaultXlsExporter();
+		exporter = createExporter();
 	}
+
+	protected abstract XlsExporter createExporter();
 
 	protected void fillTemplate(String tpl, String json, String out) throws IOException, FileNotFoundException {
 		try {

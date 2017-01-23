@@ -2,10 +2,10 @@ package ch.sebpiller.jsontoxls.api;
 
 import org.junit.Test;
 
-public class DefaultXlsExporterTest extends BaseXlsExporterTest {	
+public class JxlsExporterTest extends BaseXlsExporterTest {
 	@Override
 	protected XlsExporter createExporter() {
-		return new DefaultXlsExporter();
+		return new JxlsExporter();
 	}
 
 	@Test

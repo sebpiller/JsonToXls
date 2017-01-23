@@ -13,7 +13,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class DefaultXlsExporterTechfirmTest extends BaseXlsExporterTest {
+public class DefaultXlsExporterTechfirmTest extends BaseXlsExporterTest {	
 	@Parameters
 	public static Object[][] getParams() {
 		List<Object[]> all = new ArrayList<>();
@@ -38,6 +38,11 @@ public class DefaultXlsExporterTechfirmTest extends BaseXlsExporterTest {
 		this.tplPath = tplPath;
 		this.jsonPath = jsonPath;
 		this.outPath = outPath;
+	}
+	
+	@Override
+	protected XlsExporter createExporter() {
+		return new JxlsExporter();
 	}
 
 	@Test

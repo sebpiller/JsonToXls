@@ -33,7 +33,11 @@ import com.google.gson.JsonSyntaxException;
  * Actually, the repetition can be only of 1 row. If needed, a further
  * enhancement could be to define a convention to say: hey framework, copy those
  * x lines when you find an iteration.
+ * 
+ * @deprecated use {@link JxlsExporter} instead. It was an (unsuccessfull)
+ *             attempt to implement what JXLS does out-of-the-box.
  */
+@Deprecated
 public class DefaultXlsExporter implements XlsExporter {
 	private static final Logger LOG = LoggerFactory.getLogger(DefaultXlsExporter.class);
 	private static final Pattern PLACEHOLDER_PATTERN = anyPlaceholder();
@@ -69,10 +73,10 @@ public class DefaultXlsExporter implements XlsExporter {
 	private void doFillTemplate(InputStream templateStream, JsonElement json, OutputStream resultStream)
 			throws IOException {
 		try (Workbook workbook = new XSSFWorkbook(templateStream)) {
-			
-			for(int sheet=0; sheet<workbook.getNumberOfSheets(); sheet++) {
-				processSheet(json, workbook.getSheetAt(sheet));				
-			}			
+
+			for (int sheet = 0; sheet < workbook.getNumberOfSheets(); sheet++) {
+				processSheet(json, workbook.getSheetAt(sheet));
+			}
 
 			workbook.write(resultStream);
 		}
