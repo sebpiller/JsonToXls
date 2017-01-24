@@ -157,7 +157,7 @@ public class JxlsExporter implements XlsExporter {
 			throw new IllegalStateException(
 					"Cannot load XLS transformer. Please make sure a Transformer implementation is in classpath");
 		}
-
+		
 		ExpressionEvaluator evaluator = new JexlSupportingJsonExpressionEvaluator();
 		transformer.getTransformationConfig().setExpressionEvaluator(evaluator);
 		JxlsHelper.getInstance().processTemplate(new JsonContext(json), transformer);
